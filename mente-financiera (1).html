@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mente Financiera</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(120deg, #8be3ff, #fdfd96);
+      margin: 0;
+      overflow-x: hidden;
+      color: #333;
+      transition: background 1s ease;
+      animation: gradientMove 10s infinite alternate;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: #52b788;
+      color: white;
+      border-radius: 0 0 40px 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #40916c;
+      gap: 20px;
+      padding: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav button {
+      background: #fff;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    nav button:hover {
+      background: #b7e4c7;
+      transform: scale(1.1);
+    }
+
+    section {
+      display: none;
+      padding: 50px;
+      max-width: 900px;
+      margin: auto;
+      background: #ffffffcc;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      transition: transform 0.5s ease;
+    }
+
+    section.active {
+      display: block;
+      animation: fadeIn 0.6s;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    #kuma {
+      position: fixed;
+      bottom: 30px;
+      right: 40px;
+      width: 130px;
+      height: 130px;
+      background: url('https://cdn-icons-png.flaticon.com/512/616/616408.png') no-repeat center/contain;
+      animation: float 3s ease-in-out infinite;
+      cursor: pointer;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    #kuma-msg {
+      position: fixed;
+      bottom: 170px;
+      right: 180px;
+      background: #ffffff;
+      padding: 15px 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      font-size: 1rem;
+      color: #333;
+      display: none;
+      animation: popUp 0.5s ease;
+      max-width: 250px;
+    }
+
+    @keyframes popUp {
+      from {opacity: 0; transform: scale(0.8);}
+      to {opacity: 1; transform: scale(1);}
+    }
+
+    .btn-start {
+      display: inline-block;
+      margin-top: 20px;
+      background: #40916c;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn-start:hover {
+      background: #74c69d;
+      transform: scale(1.05);
+    }
+
+    textarea {
+      border-radius: 10px;
+      padding: 10px;
+      border: 2px solid #74c69d;
+      width: 80%;
+    }
+
+    button {
+      background: #52b788;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #95d5b2;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Mente Financiera</h1>
+    <p>Aprende con Kuma a cuidar tu dinero y alcanzar tus metas 🐾</p>
+    <a href="#" class="btn-start" onclick="showSection('conceptos')">Comenzar a aprender</a>
+  </header>
+
+  <nav>
+    <button onclick="showSection('inicio')">Inicio</button>
+    <button onclick="showSection('conceptos')">Conceptos</button>
+    <button onclick="showSection('consejos')">Consejos</button>
+    <button onclick="showSection('tips')">Tips</button>
+    <button onclick="showSection('aprende')">Aprende con Kuma</button>
+    <button onclick="showSection('comentarios')">Comentarios</button>
+  </nav>
+
+  <section id="inicio" class="active">
+    <h2>Bienvenido a Mente Financiera</h2>
+    <p>Tu espacio para aprender sobre finanzas personales de manera sencilla, divertida y con la ayuda de Kuma 🐶. Aquí encontrarás consejos, tips y actividades para mejorar tu relación con el dinero.</p>
+  </section>
+
+  <section id="conceptos">
+    <h2>Conceptos Financieros Básicos</h2>
+    <p><strong>Ahorro:</strong> Guardar parte de tus ingresos para futuros gastos o emergencias.</p>
+    <p><strong>Inversión:</strong> Usar tu dinero en algo que pueda darte ganancias con el tiempo.</p>
+    <p><strong>Presupuesto:</strong> Plan que te ayuda a controlar tus ingresos y gastos.</p>
+    <p><strong>Deuda:</strong> Dinero que se pide prestado y debe devolverse con intereses.</p>
+  </section>
+
+  <section id="consejos">
+    <h2>Consejos Financieros</h2>
+    <ul>
+      <li>Evita los <strong>gastos hormiga</strong>: pequeñas compras diarias que suman mucho al final del mes.</li>
+      <li>Haz una lista de tus prioridades antes de comprar.</li>
+      <li>Ahorra al menos el 10% de tus ingresos mensuales.</li>
+      <li>Usa una aplicación para llevar control de tus gastos.</li>
+      <li>Recuerda: cada moneda cuenta. ¡Kuma te ayudará a cuidar de ellas!</li>
+    </ul>
+  </section>
+
+  <section id="tips">
+    <h2>Tips para tu Bienestar Financiero</h2>
+    <ul>
+      <li>Aprende a diferenciar entre <em>necesidades</em> y <em>deseos</em>.</li>
+      <li>Evita las deudas innecesarias, paga tus tarjetas a tiempo.</li>
+      <li>Invierte en tu educación, es la mejor inversión a largo plazo.</li>
+      <li>Haz metas claras: Kuma dice “¡un paso a la vez te lleva más lejos!”</li>
+    </ul>
+  </section>
+
+  <section id="aprende">
+    <h2>Aprende con Kuma 🎓</h2>
+    <p>Kuma tiene un pequeño reto para ti. ¡Responde este mini quiz y demuestra tus conocimientos financieros!</p>
+    <div id="quiz">
+      <p><strong>1.</strong> ¿Qué es mejor hacer con tu dinero?</p>
+      <button onclick="answerQuiz(this, true)">Ahorrar una parte</button>
+      <button onclick="answerQuiz(this, false)">Gastar todo</button>
+      <p><strong>2.</strong> ¿Qué es un gasto hormiga?</p>
+      <button onclick="answerQuiz(this, true)">Compras pequeñas y frecuentes</button>
+      <button onclick="answerQuiz(this, false)">Un gasto grande e inesperado</button>
+    </div>
+    <p id="result"></p>
+  </section>
+
+  <section id="comentarios">
+    <h2>Comentarios</h2>
+    <textarea id="comentario" placeholder="Escribe tu comentario..." rows="4"></textarea><br>
+    <button onclick="agregarComentario()">Enviar</button>
+    <ul id="listaComentarios"></ul>
+  </section>
+
+  <div id="kuma" title="Haz clic para hablar con Kuma"></div>
+  <div id="kuma-msg"></div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function answerQuiz(btn, correct) {
+      const result = document.getElementById('result');
+      result.textContent = correct ? '¡Muy bien! Kuma está orgulloso de ti 🐶' : 'Ups... inténtalo otra vez 🐾';
+    }
+
+    function agregarComentario() {
+      const text = document.getElementById('comentario').value;
+      if(text.trim() === '') return;
+      const li = document.createElement('li');
+      li.textContent = text;
+      document.getElementById('listaComentarios').appendChild(li);
+      document.getElementById('comentario').value = '';
+    }
+
+    const mensajesKuma = [
+      "💡 ¡Ahorra hoy y disfruta mañana!",
+      "🐾 Kuma dice: nunca gastes más de lo que ganas.",
+      "💚 Cada moneda cuenta, no la desperdicies.",
+      "🎯 ¡Tú puedes lograr tus metas financieras!",
+      "📊 Un pequeño ahorro diario hace una gran diferencia.",
+      "🌟 La disciplina es la clave del éxito económico."
+    ];
+
+    const kuma = document.getElementById('kuma');
+    const msgBox = document.getElementById('kuma-msg');
+
+    kuma.addEventListener('click', () => {
+      const randomMsg = mensajesKuma[Math.floor(Math.random() * mensajesKuma.length)];
+      msgBox.textContent = randomMsg;
+      msgBox.style.display = 'block';
+      setTimeout(() => { msgBox.style.display = 'none'; }, 4000);
+    });
+  </script>
+</body>
+</html>
